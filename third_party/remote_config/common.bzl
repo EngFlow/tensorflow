@@ -26,7 +26,7 @@ def which(repository_ctx, program_name):
             program_name = program_name + ".exe"
         result = execute(repository_ctx, ["C:\\Windows\\System32\\where.exe", program_name])
     else:
-        result = execute(repository_ctx, ["which", program_name])
+        result = execute(repository_ctx, ["/usr/bin/which", program_name])
     return result.stdout.rstrip()
 
 def get_python_bin(repository_ctx):
@@ -100,7 +100,7 @@ def read_dir(repository_ctx, src_dir):
     else:
         find_result = execute(
             repository_ctx,
-            ["find", src_dir, "-follow", "-type", "f"],
+            ["/usr/bin/find", src_dir, "-follow", "-type", "f"],
             empty_stdout_fine = True,
         )
         result = find_result.stdout

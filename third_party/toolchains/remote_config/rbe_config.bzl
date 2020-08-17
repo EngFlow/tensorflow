@@ -55,7 +55,7 @@ def _tensorflow_rbe_config(name, compiler, python_versions, os, rocm_version = N
         container_image = _container_image_uri(container_name)
         exec_properties = {
             "container-image": container_image,
-            "Pool": "default",
+#            "Pool": "default",
         }
 
         remote_cuda_configure(
@@ -87,7 +87,7 @@ def _tensorflow_rbe_config(name, compiler, python_versions, os, rocm_version = N
         container_image = _container_image_uri(container_name)
         exec_properties = {
             "container-image": container_image,
-            "Pool": "default",
+#            "Pool": "default",
         }
 
         remote_rocm_configure(
@@ -99,7 +99,7 @@ def _tensorflow_rbe_config(name, compiler, python_versions, os, rocm_version = N
         container_image = _container_image_uri(os)
         exec_properties = {
             "container-image": container_image,
-            "Pool": "default",
+#            "Pool": "default",
         }
 
     else:

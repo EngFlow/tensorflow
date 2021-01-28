@@ -55,6 +55,7 @@ def _tensorflow_rbe_config(name, compiler, python_versions, os, rocm_version = N
         container_image = _container_image_uri(container_name)
         exec_properties = {
             "container-image": container_image,
+            "dockerReuse": "True",
 #            "Pool": "default",
         }
 
